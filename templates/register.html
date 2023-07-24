@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Taskify</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reg_styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Let's Get Started</h1>
+        <p>Sign up for a new account to access your personalized to-do list.</p>
+
+        <div id="error" class="error">{{ error }}</div>
+
+        <form id="register-form" method="POST" action="{{ url_for('register') }}">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="message"></div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" class="show-password" id="show-password">
+                <label for="show-password" class="show-password">Show Password</label>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a>.</p>
+    </div>
+    
+    <script src="{{ url_for('static', filename='js/reg_script.js') }}"></script>
+</body>
+
+</html>

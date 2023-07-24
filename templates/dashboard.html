@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>App Dashboard - Taskify</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dash_styles.css') }}">
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to ToDo App Dashboard</h1>
+    </header>
+    <main>
+        <section id="filterSearchContainer">
+            <h2>Filter and Search</h2>
+            <div class="filtersContainer">
+                <label for="categoryFilter">Filter by Category:</label>
+                <select id="categoryFilter" name="categoryFilter">
+                    <option value="">All</option>
+                    <!-- Options for categories will be added dynamically -->
+                </select>
+                <label for="priorityFilter">Filter by Priority:</label>
+                <select id="priorityFilter" name="priorityFilter">
+                    <option value="">All</option>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+                <label for="statusFilter">Filter by Status:</label>
+                <select id="statusFilter" name="statusFilter">
+                    <option value="">All</option>
+                    <option value="completed">Completed</option>
+                    <option value="uncompleted">Uncompleted</option>
+                </select>
+            </div>
+            <div class="searchContainer">
+                <input type="text" id="taskSearch" placeholder="Search by title or description">
+                <button id="searchBtn">Search</button>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Task List</h2>
+            <ul id="taskList">
+                {% if tasks %}
+                {% for task in tasks %}
+                <li class="taskCard {% if task.completed %}completedTask{% else %}incompletedTask{% endif %}" data-id="{{ task.id }}">
+                    <h3>{{ task.title }}</h3>
+                    <div class="taskDetails">
+                        <p><strong>Description:</strong> {{ task.description }}</p>
+                        <p><strong>Due Date:</strong> {{ task.due_date }}</p>
+                        <p><strong>Category:</strong> {{ task.category }}</p>
+                        <p><strong>Priority:</strong> {{ task.priority }}</p>
+                        <p><strong>Time Taken:</strong> {{ task.time_taken }} minutes</p>
+                        <p><strong>Completed:</strong> <b>{% if task.completed %}Yes{% else %}No{% endif %}</b></p>
+                    </div>
+                    <div class="taskActions">
+                        <button class="editBtn">Edit</button>
+                        <button class="deleteBtn">Delete</button>
+                        <button class="doneBtn">Done</button>
+                    </div>
+                    <div class="editForm" style="display: none;">
+                        <form>
+                            <div>
+                                <label for="edit_title">Title:</label>
+                                <input type="text" id="edit_title" name="edit_title" required>
+                            </div>
+                            <div>
+                                <label for="edit_description">Description:</label>
+                                <input type="text" id="edit_description" name="edit_description" required>
+                            </div>
+                            <div>
+                                <label for="edit_due_date">Due Date:</label>
+                                <input type="date" id="edit_due_date" name="edit_due_date" required>
+                            </div>
+                            <div>
+                                <label for="edit_category">Category:</label>
+                                <input type="text" id="edit_category" name="edit_category">
+                            </div>
+                            <div>
+                                <label for="edit_priority">Priority:</label>
+                                <select id="edit_priority" name="edit_priority">
+                                    <option value="low">Low</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="high">High</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="edit_time_taken">Time Taken (in minutes):</label>
+                                <input type="number" id="edit_time_taken" name="edit_time_taken">
+                            </div>
+                            <button type="button" class="cancelBtn">Cancel</button>
+                            <button type="button" class="updateBtn">Update</button>
+                        </form>
+                    </div>
+                </li>
+                {% endfor %}
+                {% endif %}
+            </ul>
+            <p id="no-task" style="text-align: center; display: none;">No tasks to display.</p>
+        </section>
+        <section id="addTaskForm">
+            <h2>Add New Task</h2>
+            <form>
+                <div>
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div>
+                    <label for="description">Description:</label>
+                    <input type="text" id="description" name="description" required>
+                </div>
+                <div>
+                    <label for="due_date">Due Date:</label>
+                    <input type="date" id="due_date" name="due_date" required>
+                </div>
+                <div>
+                    <label for="category">Category:</label>
+                    <input type="text" id="category" name="category">
+                </div>
+                <div>
+                    <label for="priority">Priority:</label>
+                    <select id="priority" name="priority">
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="time_taken">Time Taken (in minutes):</label>
+                    <input type="number" id="time_taken" name="time_taken">
+                </div>
+                <button type="submit">Add Task</button>
+            </form>
+        </section>
+    </main>
+    <script src="{{ url_for('static', filename='js/dash_script.js') }}"></script>
+</body>
+
+</html>
