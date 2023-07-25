@@ -216,6 +216,66 @@ button:hover {
 }
 
 /* Responsive styles */
+header {
+    font-size: 24px;
+    padding: 15px;
+}
+
+/* Make the header text responsive */
+h1 {
+    font-size: 20px;
+    margin: 0;
+}
+
+/* Make the filter and search container responsive */
+#filterSearchContainer {
+    padding: 10px;
+}
+
+.filtersContainer {
+    grid-template-columns: 1fr;
+}
+
+/* Set filters to be full-width on small screens */
+.filtersContainer select {
+    width: 100%;
+    margin-top: 5px;
+}
+
+/* Make the search bar full-width on small screens */
+.searchContainer {
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.searchContainer input[type="text"] {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Make the Add New Task Form responsive */
+#addTaskForm {
+    max-width: 100%;
+}
+
+/* Make the edit form responsive */
+.editForm {
+    max-width: 100%;
+}
+
+/* Add responsiveness to task list items */
+.taskCard {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    animation: none;
+}
+
+/* Adjust the font size for task titles on smaller screens */
+.taskCard h3 {
+    font-size: 18px;
+}
+
 @media screen and (min-width: 768px) {
     .taskActions {
         justify-content: flex-start;
@@ -229,6 +289,30 @@ button:hover {
     .editForm {
         max-width: 400px;
         margin: 0 auto;
+    }
+
+    .filtersContainer {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .filtersContainer:last-child {
+        justify-content: center;
+    }
+
+    /* Make the search bar and button align on the same row */
+    .searchContainer {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    /* Adjust the width of the search input to fit in the remaining space */
+    .searchContainer input[type="text"] {
+        margin-bottom: 0;
+    }
+
+    /* Add some space between the search input and button */
+    .searchContainer button {
+        margin-left: 10px;
     }
 }
 
@@ -338,17 +422,6 @@ button:hover {
     100% {
         transform: translateY(0);
         opacity: 1;
-    }
-}
-
-/* Responsive styles for filters */
-@media screen and (max-width: 767px) {
-    .filtersContainer {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .filtersContainer:last-child {
-        justify-content: center;
     }
 }
 

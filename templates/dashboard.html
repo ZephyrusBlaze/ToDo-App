@@ -10,7 +10,7 @@
 
 <body>
     <header>
-        <h1>Welcome to ToDo App Dashboard</h1>
+        <h1>Taskify - ToDo Dashboard</h1>
     </header>
     <main>
         <section id="filterSearchContainer">
@@ -40,13 +40,14 @@
                 <button id="searchBtn">Search</button>
             </div>
         </section>
-        
+
         <section>
             <h2>Task List</h2>
             <ul id="taskList">
                 {% if tasks %}
                 {% for task in tasks %}
-                <li class="taskCard {% if task.completed %}completedTask{% else %}incompletedTask{% endif %}" data-id="{{ task.id }}">
+                <li class="taskCard {% if task.completed %}completedTask{% else %}incompletedTask{% endif %}"
+                    data-id="{{ task.id }}">
                     <h3>{{ task.title }}</h3>
                     <div class="taskDetails">
                         <p><strong>Description:</strong> {{ task.description }}</p>
@@ -130,12 +131,24 @@
                 </div>
                 <div>
                     <label for="time_taken">Time Taken (in minutes):</label>
-                    <input type="number" id="time_taken" name="time_taken">
+                    <input type="number" id="time_taken" name="time_taken" oninput="validateInput(this)"
+                        onkeydown="validateInput(this)">
                 </div>
                 <button type="submit">Add Task</button>
             </form>
         </section>
     </main>
+    <script>
+        // input validations
+
+        const today = new Date().toISOString().split('T')[0];
+        // Set the min attribute of the input field to today's date
+        document.getElementById('due_date').setAttribute('min', today);
+
+        function validateInput(input) {
+            input.value = input.value.replace(/[^0-9]/g, ''); // no negative number for time.
+        }
+    </script>
     <script src="{{ url_for('static', filename='js/dash_script.js') }}"></script>
 </body>
 
