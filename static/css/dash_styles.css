@@ -11,11 +11,14 @@ header {
     background-color: #3b82f6;
     color: #fff;
     text-align: center;
-    padding: 20px;
+    font-size: 24px;
+    padding: 15px;
+    position: relative;
 }
 
 h1 {
     margin: 0;
+    font-size: 20px;
 }
 
 h2 {
@@ -35,6 +38,14 @@ ul#taskList {
     padding: 0;
 }
 
+#logoutBtn {
+    position: absolute;
+    top: 10px!important;
+    right: 10px!important;
+    background: none;
+    border: none;
+    padding-top: 5px!important;
+}
 
 .taskCard {
     background-color: #fff;
@@ -44,6 +55,10 @@ ul#taskList {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     transition: transform 0.3s, box-shadow 0.3s;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    animation: none;
 }
 
 .taskCard:hover {
@@ -53,8 +68,8 @@ ul#taskList {
 
 .taskCard h3 {
     margin-top: 0;
-    font-size: 20px;
     color: #3b82f6;
+    font-size: 18px;
 }
 
 .taskDetails p {
@@ -101,6 +116,7 @@ ul#taskList {
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    max-width: 100%;
 }
 
 #addTaskForm form {
@@ -119,6 +135,7 @@ ul#taskList {
 #addTaskForm input[type="date"],
 #addTaskForm input[type="number"] {
     width: 100%;
+    box-sizing: border-box;
     padding: 10px;
     border: 1px solid #e2e8f0;
     border-radius: 5px;
@@ -152,6 +169,7 @@ ul#taskList {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
     display: none;
+    max-width: 100%;
 }
 
 .editForm form {
@@ -170,6 +188,7 @@ ul#taskList {
 .editForm input[type="date"],
 .editForm input[type="number"] {
     width: 100%;
+    box-sizing: border-box;
     padding: 10px;
     border: 1px solid #e2e8f0;
     border-radius: 5px;
@@ -215,19 +234,7 @@ button:hover {
     opacity: 0.8;
 }
 
-/* Responsive styles */
-header {
-    font-size: 24px;
-    padding: 15px;
-}
-
-/* Make the header text responsive */
-h1 {
-    font-size: 20px;
-    margin: 0;
-}
-
-/* Make the filter and search container responsive */
+/* Filters and Search Styling */
 #filterSearchContainer {
     padding: 10px;
 }
@@ -236,13 +243,11 @@ h1 {
     grid-template-columns: 1fr;
 }
 
-/* Set filters to be full-width on small screens */
 .filtersContainer select {
     width: 100%;
     margin-top: 5px;
 }
 
-/* Make the search bar full-width on small screens */
 .searchContainer {
     flex-direction: column;
     align-items: stretch;
@@ -253,30 +258,21 @@ h1 {
     margin-bottom: 10px;
 }
 
-/* Make the Add New Task Form responsive */
-#addTaskForm {
-    max-width: 100%;
-}
-
-/* Make the edit form responsive */
-.editForm {
-    max-width: 100%;
-}
-
-/* Add responsiveness to task list items */
-.taskCard {
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    animation: none;
-}
-
-/* Adjust the font size for task titles on smaller screens */
-.taskCard h3 {
-    font-size: 18px;
-}
-
 @media screen and (min-width: 768px) {
+    header {
+        font-size: 20px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    #logoutBtn {
+        top: 5px;
+        right: 5px;
+        padding-top: 3px;
+    }
+
     .taskActions {
         justify-content: flex-start;
     }

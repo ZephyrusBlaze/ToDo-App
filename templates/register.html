@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - Taskify</title>
+    <link rel="icon" type="image/png" href="{{ url_for('favicon') }}">
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/reg_styles.css') }}">
 </head>
 
@@ -37,7 +39,7 @@
         </form>
         <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a>.</p>
     </div>
-    
+
     <script src="{{ url_for('static', filename='js/reg_script.js') }}"></script>
 </body>
 

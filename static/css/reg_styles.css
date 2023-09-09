@@ -61,6 +61,7 @@ input[type="email"],
 input[type="password"],
 input[type="text"] {
     width: 100%;
+    box-sizing: border-box;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
