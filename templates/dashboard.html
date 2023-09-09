@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>App Dashboard - Taskify</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Taskify - Your Digital ToDo List">
+    <meta property="og:description"
+        content="Taskify is your go-to task manager, designed to simplify your life and boost productivity. Stay organized, prioritize tasks, and never miss a beat with this intuitive ToDo list app.">
+    <meta property="og:image" content="{{ url_for('static', filename='images/ToDoList.jpg') }}">
+
+    <title>App Dashboard - Taskify</title>
     <link rel="icon" type="image/png" href="{{ url_for('favicon') }}">
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/dash_styles.css') }}">
@@ -69,7 +74,7 @@
                 </select>
             </div>
             <div class="searchContainer">
-                <input type="text" id="taskSearch" placeholder="Search by title or description">
+                <input type="search" id="taskSearch" placeholder="Search by title or description">
                 <button id="searchBtn">Search</button>
             </div>
         </section>
@@ -100,11 +105,12 @@
                         <form>
                             <div>
                                 <label for="edit_title">Title:</label>
-                                <input type="text" id="edit_title" name="edit_title" required>
+                                <input type="text" id="edit_title" name="edit_title" autocomplete="off" required>
                             </div>
                             <div>
                                 <label for="edit_description">Description:</label>
-                                <input type="text" id="edit_description" name="edit_description" required>
+                                <input type="text" id="edit_description" name="edit_description" autocomplete="off"
+                                    required>
                             </div>
                             <div>
                                 <label for="edit_due_date">Due Date:</label>
@@ -136,17 +142,17 @@
             </ul>
             <p id="no-task" style="text-align: center; display: none;">No tasks to display.</p>
         </section>
-        
+
         <section id="addTaskForm">
             <h2>Add New Task</h2>
             <form>
                 <div>
                     <label for="title">Title:</label>
-                    <input type="text" id="title" name="title" required>
+                    <input type="text" id="title" name="title" autocomplete="off" required>
                 </div>
                 <div>
                     <label for="description">Description:</label>
-                    <input type="text" id="description" name="description" required>
+                    <input type="text" id="description" name="description" autocomplete="off" required>
                 </div>
                 <div>
                     <label for="due_date">Due Date:</label>

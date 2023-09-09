@@ -25,7 +25,9 @@ app.secret_key = "or_is_it_?"
 @app.route("/favicon.png")
 def favicon():
     return send_from_directory(
-        os.path.join(app.root_path, "static"), "favicon.png", mimetype="image/png"
+        os.path.join(app.root_path, "static/images/"),
+        "favicon.png",
+        mimetype="image/png",
     )
 
 
@@ -345,4 +347,4 @@ def delete_task(task_id):
 if __name__ == "__main__":
     if "database.db" not in os.listdir():
         init_db()
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=5000, debug=True)

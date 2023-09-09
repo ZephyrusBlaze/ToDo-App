@@ -333,11 +333,11 @@ document.addEventListener('DOMContentLoaded', function () {
             <form>
               <div>
                 <label for="edit_title">Title:</label>
-                <input type="text" id="edit_title" name="edit_title" required value="${task.title}">
+                <input type="text" id="edit_title" name="edit_title" autocomplete="off" required value="${task.title}">
               </div>
               <div>
                 <label for="edit_description">Description:</label>
-                <input type="text" id="edit_description" name="edit_description" required value="${task.description}">
+                <input type="text" id="edit_description" name="edit_description" autocomplete="off" required value="${task.description}">
               </div>
               <div>
                 <label for="edit_due_date">Due Date:</label>

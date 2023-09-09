@@ -40,11 +40,11 @@ ul#taskList {
 
 #logoutBtn {
     position: absolute;
-    top: 10px!important;
-    right: 10px!important;
+    top: 10px !important;
+    right: 10px !important;
     background: none;
     border: none;
-    padding-top: 5px!important;
+    padding-top: 5px !important;
 }
 
 .taskCard {
@@ -253,7 +253,7 @@ button:hover {
     align-items: stretch;
 }
 
-.searchContainer input[type="text"] {
+.searchContainer input[type="search"] {
     width: 100%;
     margin-bottom: 10px;
 }
@@ -302,7 +302,7 @@ button:hover {
     }
 
     /* Adjust the width of the search input to fit in the remaining space */
-    .searchContainer input[type="text"] {
+    .searchContainer input[type="search"] {
         margin-bottom: 0;
     }
 
@@ -356,7 +356,7 @@ button:hover {
     margin-top: 10px;
 }
 
-.searchContainer input[type="text"] {
+.searchContainer input[type="search"] {
     flex: 1;
     padding: 10px;
     border: 1px solid #e2e8f0;
