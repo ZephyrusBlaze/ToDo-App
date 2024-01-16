@@ -89,7 +89,7 @@
                     <h3>{{ task.title }}</h3>
                     <div class="taskDetails">
                         <p><strong>Description:</strong> {{ task.description }}</p>
-                        <p><strong>Due Date:</strong> {{ task.due_date | format_date('%B %d, %Y') }}</p>
+                        <p><strong>Due Date:</strong> {{ task.due_date | format_date() }}</p>
                         <p><strong>Category:</strong> {{ task.category }}</p>
                         <p><strong>Priority:</strong> {{ task.priority }}</p>
                         <p><strong>Time Taken:</strong> {% if task.time_taken %}{{ task.time_taken }} minutes{% else

@@ -209,6 +209,7 @@ def check_already_login():
 
 
 # HTML jinja template filter
+@app.template_filter()
 def format_date(date_str):
     year, month, day = map(int, date_str.split('-'))
     months = [
