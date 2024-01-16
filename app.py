@@ -1,7 +1,6 @@
 # Import necessary libraries
 import os
 import json
-from datetime import datetime
 import sqlite3
 import bcrypt
 from flask import (
@@ -210,10 +209,15 @@ def check_already_login():
 
 
 # HTML jinja template filter
-@app.template_filter()
-def format_date(date_str, format_str):
-    date = datetime.strptime(date_str, "%Y-%m-%d")
-    return date.strftime(format_str)
+def format_date(date_str):
+    year, month, day = map(int, date_str.split('-'))
+    months = [
+        'January', 'February', 'March', 'April',
+        'May', 'June', 'July', 'August',
+        'September', 'October', 'November', 'December'
+    ]
+    month_name = months[month - 1]
+    return f"{month_name} {day}, {year}"
 
 
 # Main routes
