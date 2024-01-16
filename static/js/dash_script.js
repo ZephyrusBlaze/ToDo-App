@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
             title: editForm.querySelector('#edit_title').value,
             description: editForm.querySelector('#edit_description').value,
             due_date: editForm.querySelector('#edit_due_date').value,
-            category: editForm.querySelector('#edit_category').value,
+            category: editForm.querySelector('#edit_category').value.trim(),
             priority: editForm.querySelector('#edit_priority').value,
             time_taken: parseInt(editForm.querySelector('#edit_time_taken').value),
         };
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // Hide the edit form and show the task details
                 taskDetails.style.display = 'block';
-                taskActions.style.display = 'block';
+                taskActions.style.display = 'flex';
                 editForm.style.display = 'none';
 
                 updateCategoryFilter();
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const taskDetails = taskCard.querySelector('.taskDetails');
         const taskActions = taskCard.querySelector('.taskActions');
 
-        taskActions.style.display = 'block';
+        taskActions.style.display = 'flex';
         taskDetails.style.display = 'block';
         editForm.style.display = 'none';
     }
@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function () {
             title: formElements.title.value,
             description: formElements.description.value,
             due_date: formElements.due_date.value,
-            category: formElements.category.value,
+            category: formElements.category.value.trim(),
             priority: formElements.priority.value,
             time_taken: time_taken,
         };
@@ -239,7 +239,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 formElements.description.value = '';
                 formElements.due_date.value = '';
                 formElements.category.value = '';
-                formElements.priority.value = 'low';
+                formElements.priority.value = 'Low';
                 formElements.time_taken.value = '';
 
                 updateCategoryFilter();
@@ -350,9 +350,9 @@ document.addEventListener('DOMContentLoaded', function () {
               <div>
                 <label for="edit_priority">Priority:</label>
                 <select id="edit_priority" name="edit_priority">
-                  <option value="low" ${task.priority === 'low' ? 'selected' : ''}>Low</option>
-                  <option value="medium" ${task.priority === 'medium' ? 'selected' : ''}>Medium</option>
-                  <option value="high" ${task.priority === 'high' ? 'selected' : ''}>High</option>
+                  <option value="Low" ${task.priority === 'Low' ? 'selected' : ''}>Low</option>
+                  <option value="Medium" ${task.priority === 'Medium' ? 'selected' : ''}>Medium</option>
+                  <option value="High" ${task.priority === 'High' ? 'selected' : ''}>High</option>
                 </select>
               </div>
               <div>
