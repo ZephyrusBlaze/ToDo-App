@@ -42,7 +42,7 @@ python app.py
 
 4. Visit `http://localhost:5000` in your web browser to access Taskify. 🌐
 
-**🚨 Note: Although Taskify is not hosted on a live server, you can check out the demo hosted on Replit [here](https://ToDo-App.thestrange-007.repl.co).**
+**🚨 Note: You can check out the application hosted on pythonanywhere [here](https://todotaskify.pythonanywhere.com/).**
 
 ## Features
 - Add new tasks with titles, descriptions, due dates, categories, and priorities. ➕
@@ -73,8 +73,7 @@ ToDo-App
         └── reg_script.js  # JavaScript for the register page
 ```
 
-## Contributing
-We welcome contributions to Taskify! If you find any bugs or have ideas for improvements, feel free to open an issue or submit a pull request.
+<!-- contributions are welcome but not now :p -->
 
 ## License
 Taskify is licensed under the Apache 2.0 License. See the [LICENSE](LICENSE) file for more details.
