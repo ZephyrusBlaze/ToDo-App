@@ -9,7 +9,6 @@ Welcome to Taskify, a simple and efficient ToDo app made using Flask, SQLite, HT
     - [Usage](#usage)
 3. [Features](#features)
 4. [File Structure](#file-structure)
-5. [Contributing](#contributing)
 6. [License](#license)
 
 ## Introduction
