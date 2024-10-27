@@ -26,7 +26,7 @@ Once you have the requirements in place, you can proceed to the usage section.
 ### Usage
 1. Clone the repository to your local machine:
 ```bash
-git clone https://github.com/TheStrange-007/ToDo-App.git
+git clone https://github.com/ZephyrusBlaze/ToDo-App.git
 ```
 
 2. Change into the project directory:
